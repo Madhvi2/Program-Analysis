@@ -1,0 +1,85 @@
+public class Madhur_Program extends java.lang.Object
+{
+
+    public static void main(java.lang.String)
+    {
+        java.lang.String args, temp$6;
+        java.io.PrintStream temp$0, temp$1, temp$4, temp$11;
+        int i, j, temp$2, temp$3, temp$7, temp$8, temp$9, temp$10;
+        java.lang.StringBuffer temp$5;
+
+        args := @parameter0: java.lang.String;
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$0.<java.io.PrintStream: void print(java.lang.String)>("Hello");
+        i = 0;
+
+     label0:
+        nop;
+        if i < 5 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        j = 0;
+        temp$1 = <java.lang.System: java.io.PrintStream out>;
+        temp$2 = i;
+        temp$3 = temp$2 + 1;
+        virtualinvoke temp$1.<java.io.PrintStream: void print(int)>(temp$3);
+
+     label2:
+        nop;
+        if j < 5 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = <java.lang.System: java.io.PrintStream out>;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\t ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(i);
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        virtualinvoke temp$4.<java.io.PrintStream: void print(java.lang.String)>(temp$6);
+        temp$7 = j;
+        temp$8 = temp$7 + 1;
+        j = temp$8;
+        goto label2;
+
+     label4:
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        temp$11 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$11.<java.io.PrintStream: void println()>();
+        goto label0;
+
+     label5:
+        nop;
+        return;
+    }
+
+    void foo()
+    {
+        Madhur_Program this;
+        int Akshu;
+        java.io.PrintStream temp$0;
+
+        this := @this: Madhur_Program;
+        Akshu = 10;
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("I am in new method");
+        return;
+    }
+
+    public void <init>()
+    {
+        Madhur_Program this;
+
+        this := @this: Madhur_Program;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+}

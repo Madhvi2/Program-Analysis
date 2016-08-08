@@ -1,0 +1,163 @@
+{
+
+    public java.util.ArrayList getInput()
+    {
+        SampleTaint this;
+        java.util.ArrayList input, temp$0;
+        java.util.Scanner s, temp$1;
+        java.io.InputStream temp$2;
+        java.lang.String temp$3, temp$5, temp$7;
+        boolean temp$4, temp$6, temp$8;
+
+        this := @this: SampleTaint;
+        temp$0 = new java.util.ArrayList;
+        specialinvoke temp$0.<java.util.ArrayList: void <init>()>();
+        input = temp$0;
+        temp$1 = new java.util.Scanner;
+        temp$2 = <java.lang.System: java.io.InputStream in>;
+        specialinvoke temp$1.<java.util.Scanner: void <init>(java.io.InputStream)>(temp$2);
+        s = temp$1;
+        temp$3 = virtualinvoke s.<java.util.Scanner: java.lang.String next()>();
+        temp$4 = virtualinvoke input.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$3);
+        temp$5 = virtualinvoke s.<java.util.Scanner: java.lang.String next()>();
+        temp$6 = virtualinvoke input.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$5);
+        temp$7 = virtualinvoke s.<java.util.Scanner: java.lang.String next()>();
+        temp$8 = virtualinvoke input.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$7);
+        virtualinvoke s.<java.util.Scanner: void close()>();
+        return input;
+    }
+
+    public transient void printOutPut(java.lang.String[])
+    {
+        SampleTaint this;
+        java.lang.String[] inputs, temp$5, temp$7, temp$14, temp$16, temp$19, temp$25, temp$29;
+        java.lang.Integer i, temp$6, temp$8, temp$15, temp$17, temp$20, temp$26, temp$30, temp$34;
+        int temp$0, temp$1, temp$2, temp$3, temp$4, temp$12, temp$13, temp$22, temp$23, temp$32, temp$33;
+        java.lang.String temp$9, temp$10, temp$11, temp$18, temp$21, temp$24, temp$27, temp$31;
+        java.io.PrintStream temp$28;
+
+        this := @this: SampleTaint;
+        inputs := @parameter0: java.lang.String[];
+        temp$0 = 0;
+        i = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$0);
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke i.<java.lang.Integer: int intValue()>();
+        temp$2 = lengthof inputs;
+        if temp$1 < temp$2 goto label1;
+
+        goto label8;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke i.<java.lang.Integer: int intValue()>();
+        temp$4 = temp$3 % 2;
+        if temp$4 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$5 = inputs;
+        temp$6 = i;
+        temp$7 = inputs;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = virtualinvoke i.<java.lang.Integer: java.lang.String toString()>();
+        temp$11 = virtualinvoke temp$9.<java.lang.String: java.lang.String concat(java.lang.String)>(temp$10);
+        temp$5[temp$6] = temp$11;
+        goto label7;
+
+     label3:
+        nop;
+        temp$12 = virtualinvoke i.<java.lang.Integer: int intValue()>();
+        temp$13 = temp$12 % 3;
+        if temp$13 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$14 = inputs;
+        temp$15 = i;
+        temp$16 = inputs;
+        temp$17 = i;
+        temp$18 = temp$16[temp$17];
+        temp$19 = inputs;
+        temp$20 = i;
+        temp$21 = temp$19[temp$20];
+        temp$22 = virtualinvoke temp$21.<java.lang.String: int length()>();
+        temp$23 = temp$22 / 2;
+        temp$24 = virtualinvoke temp$18.<java.lang.String: java.lang.String substring(int,int)>(0, temp$23);
+        temp$14[temp$15] = temp$24;
+        goto label6;
+
+     label5:
+        nop;
+        temp$25 = inputs;
+        temp$26 = i;
+        temp$27 = "NOT TAINTED NOW";
+        temp$25[temp$26] = temp$27;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        temp$28 = <java.lang.System: java.io.PrintStream out>;
+        temp$29 = inputs;
+        temp$30 = i;
+        temp$31 = temp$29[temp$30];
+        virtualinvoke temp$28.<java.io.PrintStream: void println(java.lang.String)>(temp$31);
+        nop;
+        temp$32 = virtualinvoke i.<java.lang.Integer: int intValue()>();
+        temp$33 = temp$32 + 1;
+        temp$34 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$33);
+        i = temp$34;
+        goto label0;
+
+     label8:
+        nop;
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args, temp$2, temp$5;
+        SampleTaint ST, temp$0;
+        java.util.ArrayList input, temp$1;
+        java.lang.Object temp$3, temp$6, temp$8;
+        java.lang.String temp$4, temp$7, temp$9;
+
+        args := @parameter0: java.lang.String[];
+        temp$0 = new SampleTaint;
+        specialinvoke temp$0.<SampleTaint: void <init>()>();
+        ST = temp$0;
+        temp$1 = virtualinvoke ST.<SampleTaint: java.util.ArrayList getInput()>();
+        input = temp$1;
+        temp$2 = newarray (java.lang.String)[1];
+        temp$3 = virtualinvoke input.<java.util.ArrayList: java.lang.Object get(int)>(1);
+        temp$4 = (java.lang.String) temp$3;
+        temp$2[0] = temp$4;
+        virtualinvoke ST.<SampleTaint: void printOutPut(java.lang.String[])>(temp$2);
+        temp$5 = newarray (java.lang.String)[2];
+        temp$6 = virtualinvoke input.<java.util.ArrayList: java.lang.Object get(int)>(2);
+        temp$7 = (java.lang.String) temp$6;
+        temp$5[0] = temp$7;
+        temp$8 = virtualinvoke input.<java.util.ArrayList: java.lang.Object get(int)>(2);
+        temp$9 = (java.lang.String) temp$8;
+        temp$5[1] = temp$9;
+        virtualinvoke ST.<SampleTaint: void printOutPut(java.lang.String[])>(temp$5);
+        return;
+    }
+
+    public void <init>()
+    {
+        SampleTaint this;
+
+        this := @this: SampleTaint;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+}

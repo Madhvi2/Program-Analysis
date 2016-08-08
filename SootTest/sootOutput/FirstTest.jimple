@@ -1,0 +1,113 @@
+public class FirstTest extends java.lang.Object
+{
+    java.lang.String test;
+    java.lang.String test1;
+    int tt;
+    static int aa;
+
+    public static void main(java.lang.String[]) throws java.io.IOException
+    {
+        java.lang.String[] args;
+        int x, y, z, k, temp$0, temp$1;
+        java.io.PrintStream temp$2;
+
+        args := @parameter0: java.lang.String[];
+        x = 6;
+        y = 8;
+        z = 9;
+        temp$0 = x;
+        temp$1 = temp$0 + y;
+        k = temp$1 + z;
+        temp$2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$2.<java.io.PrintStream: void print(java.lang.String)>("Test Soot");
+        staticinvoke <FirstTest: void sum(int,int,java.lang.String)>(3, 4, "test");
+        return;
+    }
+
+    public static void sum(int, int, java.lang.String)
+    {
+        int a, b, c1, temp$0, temp$1, temp$2, z, temp$3, temp$4, k, temp$5, temp$6, temp$7, temp$8, temp$9;
+        java.lang.String C;
+
+        a := @parameter0: int;
+        b := @parameter1: int;
+        C := @parameter2: java.lang.String;
+        temp$0 = a;
+        c1 = temp$0 + b;
+        temp$1 = c1;
+        temp$2 = temp$1 + 5;
+        <FirstTest: int aa> = temp$2;
+        z = 0;
+
+     label0:
+        nop;
+        if z < 10 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        temp$3 = z;
+        temp$4 = temp$3 + 1;
+        z = temp$4;
+        k = 0;
+
+     label2:
+        nop;
+        if k < 3 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = k;
+        temp$6 = temp$5 + 1;
+        k = temp$6;
+        goto label2;
+
+     label4:
+        nop;
+        goto label0;
+
+     label5:
+        nop;
+        temp$7 = 5;
+        z = temp$7;
+
+     label6:
+        nop;
+        if z < 10 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$8 = z;
+        temp$9 = temp$8 + 1;
+        z = temp$9;
+        goto label6;
+
+     label8:
+        nop;
+        staticinvoke <FirstTest: void prnt()>();
+        return;
+    }
+
+    public static void prnt()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("Success");
+        return;
+    }
+
+    public void <init>()
+    {
+        FirstTest this;
+
+        this := @this: FirstTest;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+}

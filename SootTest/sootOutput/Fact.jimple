@@ -1,0 +1,28 @@
+public class Fact extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int a, b, c, d, temp$0, temp$1, temp$2;
+
+        args := @parameter0: java.lang.String[];
+        a = 10;
+        b = 20;
+        c = 35;
+        temp$0 = a;
+        temp$1 = temp$0 + b;
+        temp$2 = temp$1 * c;
+        d = temp$2;
+        return;
+    }
+
+    public void <init>()
+    {
+        Fact this;
+
+        this := @this: Fact;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+}

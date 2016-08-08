@@ -1,0 +1,56 @@
+public class SimpleAnalysis extends soot.BodyTransformer
+{
+
+    protected void internalTransform(soot.Body, java.lang.String, java.util.Map)
+    {
+        SimpleAnalysis this;
+        soot.Body body;
+        java.lang.String arg1, temp$3, temp$4, temp$7, temp$8, temp$12;
+        java.util.Map arg2;
+        soot.SootMethod sootmethod, temp$0;
+        java.io.PrintStream temp$1, temp$5, temp$9;
+        java.lang.StringBuffer temp$2, temp$6, temp$10;
+        java.util.List temp$11;
+
+        this := @this: SimpleAnalysis;
+        body := @parameter0: soot.Body;
+        arg1 := @parameter1: java.lang.String;
+        arg2 := @parameter2: java.util.Map;
+        temp$0 = virtualinvoke body.<soot.Body: soot.SootMethod getMethod()>();
+        sootmethod = temp$0;
+        temp$1 = <java.lang.System: java.io.PrintStream out>;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Method Name:\t");
+        temp$3 = virtualinvoke sootmethod.<soot.SootMethod: java.lang.String getName()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$3);
+        temp$4 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        virtualinvoke temp$1.<java.io.PrintStream: void println(java.lang.String)>(temp$4);
+        temp$5 = <java.lang.System: java.io.PrintStream out>;
+        temp$6 = new java.lang.StringBuffer;
+        specialinvoke temp$6.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Signature of Method:\t");
+        temp$7 = virtualinvoke sootmethod.<soot.SootMethod: java.lang.String getSignature()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$7);
+        temp$8 = virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.String toString()>();
+        virtualinvoke temp$5.<java.io.PrintStream: void println(java.lang.String)>(temp$8);
+        temp$9 = <java.lang.System: java.io.PrintStream out>;
+        temp$10 = new java.lang.StringBuffer;
+        specialinvoke temp$10.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Exception Thrown by the method:\t");
+        temp$11 = virtualinvoke sootmethod.<soot.SootMethod: java.util.List getExceptions()>();
+        virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$11);
+        temp$12 = virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.String toString()>();
+        virtualinvoke temp$9.<java.io.PrintStream: void println(java.lang.String)>(temp$12);
+        return;
+    }
+
+    public void <init>()
+    {
+        SimpleAnalysis this;
+
+        this := @this: SimpleAnalysis;
+        specialinvoke this.<soot.BodyTransformer: void <init>()>();
+        return;
+    }
+}

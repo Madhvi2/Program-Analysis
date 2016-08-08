@@ -1,0 +1,33 @@
+public class Driverclass extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        soot.Pack jtp, temp$1;
+        soot.PackManager temp$0;
+        soot.Transform temp$2;
+        SimpleAnalysis temp$3;
+
+        args := @parameter0: java.lang.String[];
+        temp$0 = staticinvoke <soot.PackManager: soot.PackManager v()>();
+        temp$1 = virtualinvoke temp$0.<soot.PackManager: soot.Pack getPack(java.lang.String)>("jtp");
+        jtp = temp$1;
+        temp$2 = new soot.Transform;
+        temp$3 = new SimpleAnalysis;
+        specialinvoke temp$3.<SimpleAnalysis: void <init>()>();
+        specialinvoke temp$2.<soot.Transform: void <init>(java.lang.String,soot.Transformer)>("jtp.instrumenter", temp$3);
+        virtualinvoke jtp.<soot.Pack: void add(soot.Transform)>(temp$2);
+        staticinvoke <soot.Main: void main(java.lang.String[])>(args);
+        return;
+    }
+
+    public void <init>()
+    {
+        Driverclass this;
+
+        this := @this: Driverclass;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+}
